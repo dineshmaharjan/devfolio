@@ -34,6 +34,8 @@ dependencies:
   animated_text_kit: any
   dependencies:
   particles_flutter: "^0.1.1"
+  mobx: any
+  flutter_mobx: any
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -49,6 +51,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  build_runner: any
+  mobx_codegen: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
