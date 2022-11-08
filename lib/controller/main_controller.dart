@@ -1,3 +1,5 @@
+// ignore_for_file: empty_constructor_bodies
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
@@ -8,7 +10,7 @@ part 'main_controller.g.dart';
 class MainController = MainControllerBase with _$MainController;
 
 abstract class MainControllerBase with Store {
-  final ScrollController _scrollController = ScrollController();
+  static final ScrollController _scrollController = ScrollController();
 
   @observable
   int _index = 0;
@@ -18,6 +20,7 @@ abstract class MainControllerBase with Store {
 
   set pageIndex(int index) {
     _index = index;
+    print('inside page index ${_index}');
     scrollAnimated(_index.toDouble());
   }
 
@@ -37,8 +40,12 @@ abstract class MainControllerBase with Store {
     return _scrollController;
   }
 
-  void scrollAnimated(double position) {
-    scrollController.animateTo(position,
+  static ScrollController getScrollController() {
+    return _scrollController;
+  }
+
+   void scrollAnimated(double position) {
+    _scrollController.animateTo(position,
         duration: const Duration(seconds: 1), curve: Curves.ease);
   }
 }

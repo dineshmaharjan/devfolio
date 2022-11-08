@@ -1,12 +1,23 @@
+import 'package:devfolio/controller/main_controller.dart';
 import 'package:devfolio/core/utils/screen_utils.dart';
 import 'package:devfolio/ui/sections/main/main_section.dart';
 import 'package:devfolio/ui/sections/navbar/mobile_navigation_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'ui/sections/navbar/navbar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<MainController>(
+          create: (_) => MainController(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -40,8 +51,8 @@ class MyApp extends StatelessWidget {
                 ? const MobileNavigationDrawer()
                 : null,
             body: Padding(
-              padding: EdgeInsets.all(
-                  !ScreenUtils.isWebOrDesktop(context) ? 0 : 24),
+              padding:
+                  EdgeInsets.all(!ScreenUtils.isWebOrDesktop(context) ? 0 : 24),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [

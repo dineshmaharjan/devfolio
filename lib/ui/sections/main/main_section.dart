@@ -10,6 +10,7 @@ import 'package:devfolio/ui/sections/technology/technology_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:particles_flutter/particles_flutter.dart';
+import 'package:provider/provider.dart';
 
 class MainSection extends StatefulWidget {
   const MainSection({Key? key}) : super(key: key);
@@ -33,6 +34,7 @@ class _MainSectionState extends State<MainSection> {
 
   @override
   Widget build(BuildContext context) {
+    var _mainController = context.watch<MainController>();
     return Padding(
       padding: ScreenUtils.isWebOrDesktop(context)
           ? const EdgeInsets.all(24)
@@ -62,19 +64,21 @@ class _MainSectionState extends State<MainSection> {
               if (metrics.atEdge) {
                 bool isTop = metrics.pixels == 0;
                 if (isTop) {
-                  mainController.atBottom = false;
+                  _mainController.atBottom = false;
                 } else {
-                  mainController.atBottom = true;
+                  _mainController.atBottom = true;
                 }
               }
               return true;
             },
-            child: ListView.builder(
-              controller: mainController.scrollController,
-              itemCount: widgets.length,
-              itemBuilder: (context, index) {
-                return widgets[index];
-              },
+            child: Observer(
+              builder: (_) => ListView.builder(
+                controller: _mainController.scrollController,
+                itemCount: widgets.length,
+                itemBuilder: (context, index) {
+                  return widgets[index];
+                },
+              ),
             ),
           ),
           Observer(

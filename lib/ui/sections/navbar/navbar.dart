@@ -1,6 +1,8 @@
+import 'package:devfolio/controller/main_controller.dart';
 import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class NavBarWidget extends StatefulWidget {
   const NavBarWidget({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class NavBarWidget extends StatefulWidget {
 class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
+    var _mainController = context.watch<MainController>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
@@ -40,20 +43,25 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   children: [
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.black,
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                            child: Text(
-                              'Home',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 16),
+                        return InkWell(
+                          onTap: () {
+                            _mainController.scrollAnimated(4);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: isHovered ? Colors.red : Colors.black,
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 8),
+                              child: Text(
+                                'Home',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 16),
+                              ),
                             ),
                           ),
                         );
@@ -68,8 +76,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
                             child: Text(
                               'About',
                               style: TextStyle(
@@ -90,8 +98,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
                             child: Text(
                               'Services',
                               style: TextStyle(
@@ -112,8 +120,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
                             child: Text(
                               'Work',
                               style: TextStyle(
@@ -134,8 +142,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
                             child: Text(
                               'Contact',
                               style: TextStyle(
@@ -156,8 +164,8 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
                             child: Text(
                               'Resume',
                               style: TextStyle(
