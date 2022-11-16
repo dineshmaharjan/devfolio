@@ -1,7 +1,6 @@
-import 'package:devfolio/controller/main_controller.dart';
+import 'package:devfolio/core/provider/scroll_provider.dart';
 import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class NavBarWidget extends StatefulWidget {
@@ -14,7 +13,8 @@ class NavBarWidget extends StatefulWidget {
 class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
-    var _mainController = context.watch<MainController>();
+    final _scrollProvider = Provider.of<ScrollProvider>(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
@@ -45,7 +45,10 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       builder: (isHovered) {
                         return InkWell(
                           onTap: () {
-                            _mainController.scrollAnimated(4);
+                            _scrollProvider.itemScrollController.scrollTo(
+                                index: 0,
+                                duration: const Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -70,20 +73,26 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     const Spacer(),
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.black,
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 8),
-                            child: Text(
-                              'About',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 16),
+                        return InkWell(
+                          onTap: () => _scrollProvider.itemScrollController.scrollTo(
+                                index: 1,
+                                duration: const Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: isHovered ? Colors.red : Colors.black,
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 8),
+                              child: Text(
+                                'About',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 16),
+                              ),
                             ),
                           ),
                         );
@@ -92,20 +101,26 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     const Spacer(),
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.black,
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 8),
-                            child: Text(
-                              'Services',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 16),
+                        return InkWell(
+                          onTap: () => _scrollProvider.itemScrollController.scrollTo(
+                                index: 2,
+                                duration: const Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: isHovered ? Colors.red : Colors.black,
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 8),
+                              child: Text(
+                                'Services',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 16),
+                              ),
                             ),
                           ),
                         );
@@ -114,20 +129,26 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     const Spacer(),
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.black,
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 8),
-                            child: Text(
-                              'Work',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
-                                  fontSize: 16),
+                        return InkWell(
+                          onTap: () => _scrollProvider.itemScrollController.scrollTo(
+                                index: 3,
+                                duration: const Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: isHovered ? Colors.red : Colors.black,
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 8),
+                              child: Text(
+                                'Work',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 16),
+                              ),
                             ),
                           ),
                         );
@@ -136,7 +157,12 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     const Spacer(),
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
-                        return Container(
+                        return InkWell(
+                          onTap: ()=>_scrollProvider.itemScrollController.scrollTo(
+                                index: 4,
+                                duration: const Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic),
+                          child: Container(
                           decoration: BoxDecoration(
                             color: isHovered ? Colors.red : Colors.black,
                             borderRadius: BorderRadius.circular(4.0),
@@ -152,6 +178,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   fontSize: 16),
                             ),
                           ),
+                        ),
                         );
                       },
                     ),

@@ -10,7 +10,6 @@ part 'main_controller.g.dart';
 class MainController = MainControllerBase with _$MainController;
 
 abstract class MainControllerBase with Store {
-  static final ScrollController _scrollController = ScrollController();
 
   @observable
   int _index = 0;
@@ -20,8 +19,6 @@ abstract class MainControllerBase with Store {
 
   set pageIndex(int index) {
     _index = index;
-    print('inside page index ${_index}');
-    scrollAnimated(_index.toDouble());
   }
 
   int get pageIndex {
@@ -36,16 +33,16 @@ abstract class MainControllerBase with Store {
     return _isAtBottom;
   }
 
-  ScrollController get scrollController {
-    return _scrollController;
-  }
+  // ScrollController get scrollController {
+  //   return _scrollController;
+  // }
 
-  static ScrollController getScrollController() {
-    return _scrollController;
-  }
+  // static ScrollController getScrollController() {
+  //   return _scrollController;
+  // }
 
-   void scrollAnimated(double position) {
-    _scrollController.animateTo(position,
-        duration: const Duration(seconds: 1), curve: Curves.ease);
-  }
+  //  void scrollAnimated(double position) {
+  //   _scrollController.animateTo(position,
+  //       duration: const Duration(seconds: 1), curve: Curves.ease);
+  // }
 }

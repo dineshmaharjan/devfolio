@@ -1,4 +1,5 @@
 import 'package:devfolio/controller/main_controller.dart';
+import 'package:devfolio/core/provider/scroll_provider.dart';
 import 'package:devfolio/core/utils/screen_utils.dart';
 import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:devfolio/ui/sections/about/about_section.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class MainSection extends StatefulWidget {
   const MainSection({Key? key}) : super(key: key);
@@ -21,7 +23,6 @@ class MainSection extends StatefulWidget {
 
 class _MainSectionState extends State<MainSection> {
   // final ScrollController _scrollController = ScrollController();
-  MainController mainController = MainController();
 
   var widgets = [
     const HomeSection(),
@@ -35,6 +36,9 @@ class _MainSectionState extends State<MainSection> {
   @override
   Widget build(BuildContext context) {
     var _mainController = context.watch<MainController>();
+
+    final _scrollProvider = Provider.of<ScrollProvider>(context);
+
     return Padding(
       padding: ScreenUtils.isWebOrDesktop(context)
           ? const EdgeInsets.all(24)
@@ -71,25 +75,24 @@ class _MainSectionState extends State<MainSection> {
               }
               return true;
             },
-            child: Observer(
-              builder: (_) => ListView.builder(
-                controller: _mainController.scrollController,
-                itemCount: widgets.length,
-                itemBuilder: (context, index) {
-                  return widgets[index];
-                },
-              ),
-            ),
+            child:  ScrollablePositionedList.builder(
+                  itemScrollController: _scrollProvider.itemScrollController,
+                  itemPositionsListener:_scrollProvider.itemPositionListener,
+                  itemCount: widgets.length,
+                  itemBuilder: (context, index) {
+                    return widgets[index];
+                  },
+                ),
           ),
           Observer(
             builder: (_) => Visibility(
-              visible: mainController.atBottom,
+              visible: _mainController.atBottom,
               child: Positioned(
                 right: 0,
                 bottom: 0,
                 child: InkWell(
                   onTap: () {
-                    mainController.scrollAnimated(0);
+                    _scrollProvider.scrollAnimated(0);
                   },
                   borderRadius: const BorderRadius.all(Radius.circular(48)),
                   child: AnimatedContainer(
@@ -111,7 +114,14 @@ class _MainSectionState extends State<MainSection> {
   }
 
   // void scrollAnimated(double position) {
-  //   _scrollController.animateTo(position,
+  //    Observer(
+  //     builder: (_){
+  //       print('scroll index ${mainController.pageIndex}');
+  //       _scrollController.animateTo(mainController.pageIndex.toDouble(),
   //       duration: const Duration(seconds: 1), curve: Curves.ease);
+  //       return const SizedBox();
+  //     },
+  //    );
+
   // }
 }

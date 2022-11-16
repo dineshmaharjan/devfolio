@@ -1,4 +1,5 @@
 import 'package:devfolio/controller/main_controller.dart';
+import 'package:devfolio/core/provider/scroll_provider.dart';
 import 'package:devfolio/core/utils/screen_utils.dart';
 import 'package:devfolio/ui/sections/main/main_section.dart';
 import 'package:devfolio/ui/sections/navbar/mobile_navigation_drawer.dart';
@@ -8,14 +9,16 @@ import 'package:provider/provider.dart';
 import 'ui/sections/navbar/navbar.dart';
 
 void main() {
+   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MultiProvider(
       providers: [
+       ChangeNotifierProvider(create:   (_)=>ScrollProvider()),
         Provider<MainController>(
           create: (_) => MainController(),
         )
       ],
-      child: const MyApp(),
+      child:const MyApp(),
     ),
   );
 }
