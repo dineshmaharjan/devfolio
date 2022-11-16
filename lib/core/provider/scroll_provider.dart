@@ -13,11 +13,9 @@ final ItemPositionsListener _itemPositionsListener = ItemPositionsListener.creat
   ItemPositionsListener get itemPositionListener => _itemPositionsListener;
 
   void scrollAnimated(double position) {
-    print('positioned ${position}');
 
     _scrollController.animateTo(position,
         duration: const Duration(seconds: 1), curve: Curves.ease);
 
-        notifyListeners();
   }
 }

@@ -6,6 +6,7 @@ import 'package:devfolio/ui/sections/about/about_section.dart';
 import 'package:devfolio/ui/sections/footer/footer.dart';
 import 'package:devfolio/ui/sections/getInTouch/get_in_touch_section.dart';
 import 'package:devfolio/ui/sections/home/home_section.dart';
+import 'package:devfolio/ui/sections/projects/projects_section.dart';
 import 'package:devfolio/ui/sections/services/service_section.dart';
 import 'package:devfolio/ui/sections/technology/technology_section.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class _MainSectionState extends State<MainSection> {
     const AboutSection(),
     const ServiceSection(),
     const TechnologySection(),
+    const ProjectsSection(),
     const GetInTouchSection(),
     const FooterWidget(),
   ];
@@ -92,7 +94,10 @@ class _MainSectionState extends State<MainSection> {
                 bottom: 0,
                 child: InkWell(
                   onTap: () {
-                    _scrollProvider.scrollAnimated(0);
+                  _scrollProvider.itemScrollController.scrollTo(
+                                index: 0,
+                                duration: const Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic);
                   },
                   borderRadius: const BorderRadius.all(Radius.circular(48)),
                   child: AnimatedContainer(
