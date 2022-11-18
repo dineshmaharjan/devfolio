@@ -52,7 +52,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: isHovered ? Colors.red : Colors.black,
+                              color: isHovered ? Colors.red : Colors.transparent,
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             child: const Padding(
@@ -80,7 +80,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                 curve: Curves.easeInOutCubic),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: isHovered ? Colors.red : Colors.black,
+                              color: isHovered ? Colors.red : Colors.transparent,
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             child: const Padding(
@@ -108,7 +108,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                 curve: Curves.easeInOutCubic),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: isHovered ? Colors.red : Colors.black,
+                              color: isHovered ? Colors.red : Colors.transparent,
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             child: const Padding(
@@ -131,12 +131,12 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       builder: (isHovered) {
                         return InkWell(
                           onTap: () => _scrollProvider.itemScrollController.scrollTo(
-                                index: 3,
+                                index: 4,
                                 duration: const Duration(seconds: 2),
                                 curve: Curves.easeInOutCubic),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: isHovered ? Colors.red : Colors.black,
+                              color: isHovered ? Colors.red : Colors.transparent,
                               borderRadius: BorderRadius.circular(4.0),
                             ),
                             child: const Padding(
@@ -164,7 +164,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                 curve: Curves.easeInOutCubic),
                           child: Container(
                           decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.black,
+                            color: isHovered ? Colors.red : Colors.transparent,
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(
@@ -187,7 +187,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                       builder: (isHovered) {
                         return Container(
                           decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.black,
+                            color: isHovered ? Colors.red : Colors.transparent,
                             borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: const Padding(

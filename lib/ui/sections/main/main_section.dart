@@ -43,8 +43,8 @@ class _MainSectionState extends State<MainSection> {
 
     return Padding(
       padding: ScreenUtils.isWebOrDesktop(context)
-          ? const EdgeInsets.all(24)
-          : const EdgeInsets.only(left: 16, right: 16, bottom: 24),
+          ? const EdgeInsets.only(bottom: 8)
+          : const EdgeInsets.only(left: 16, right: 16, bottom: 0),
       child: Stack(
         children: [
           CircularParticle(
@@ -118,15 +118,5 @@ class _MainSectionState extends State<MainSection> {
     );
   }
 
-  // void scrollAnimated(double position) {
-  //    Observer(
-  //     builder: (_){
-  //       print('scroll index ${mainController.pageIndex}');
-  //       _scrollController.animateTo(mainController.pageIndex.toDouble(),
-  //       duration: const Duration(seconds: 1), curve: Curves.ease);
-  //       return const SizedBox();
-  //     },
-  //    );
 
-  // }
 }

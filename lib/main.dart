@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
                 : null,
             body: Padding(
               padding:
-                  EdgeInsets.all(!ScreenUtils.isWebOrDesktop(context) ? 0 : 24),
+                !ScreenUtils.isWebOrDesktop(context)?  const EdgeInsets.all( 0 ):const EdgeInsets.only(left: 24,right: 24),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [

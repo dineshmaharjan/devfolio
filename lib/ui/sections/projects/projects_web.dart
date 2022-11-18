@@ -10,7 +10,7 @@ class ProjectsWeb extends StatefulWidget {
 class _ProjectsWebState extends State<ProjectsWeb>
     with TickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
+  // late Animation<double> _animation;
 
   @override
   void initState() {
@@ -25,6 +25,46 @@ class _ProjectsWebState extends State<ProjectsWeb>
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Expanded(
+          child: getProjectDescription(MediaQuery.of(context).size),
+        ),
+        getProjectImageWidget(),
+      ],
+    );
+  }
+
+  Widget getProjectDescription(Size size) {
+    return SizedBox(
+      width: size.width/2 *0.20,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const [
+          Text(
+            'Kiosk App for Restaurant',
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 48),
+          ),
+          Text(
+            'Kiosk app is used to order foods from menu for Dinne-in , and order items is print with KOT.',
+            maxLines: 1,
+            textDirection: TextDirection.rtl,
+            textAlign: TextAlign.justify,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
+              fontSize: 24,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget getProjectImageWidget() {
+    return Row(
       children: [
         AnimatedBuilder(
           animation: _controller,
@@ -44,17 +84,17 @@ class _ProjectsWebState extends State<ProjectsWeb>
           animation: _controller,
           builder: (context, child) {
             return Transform.translate(
-              offset: Offset(0, 70 * _controller.value),
+              offset: Offset(0, 60 * _controller.value),
               child: Image.asset(
                 "assets/images/kiosk_2.png",
                 height: 450,
-                  width: 200,
+                width: 200,
                 fit: BoxFit.cover,
               ),
             );
           },
         ),
-          AnimatedBuilder(
+        AnimatedBuilder(
           animation: _controller,
           builder: (context, child) {
             return Transform.translate(
@@ -62,7 +102,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
               child: Image.asset(
                 "assets/images/kiosk_3.png",
                 height: 450,
-                  width: 200,
+                width: 200,
                 fit: BoxFit.cover,
               ),
             );
