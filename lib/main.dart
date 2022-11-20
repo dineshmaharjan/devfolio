@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'ui/sections/navbar/navbar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
    WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       title: 'DevFolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Montserrat',
+        textTheme: GoogleFonts.gaeguTextTheme(),
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color(0xFF040404),
       ),

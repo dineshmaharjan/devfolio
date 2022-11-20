@@ -44,37 +44,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    MouseHoverRegionBuilder(
-                      builder: (isHovered) {
-                        return InkWell(
-                          onTap: () {
-                            _scrollProvider.itemScrollController.scrollTo(
-                                index: 0,
-                                duration: const Duration(seconds: 2),
-                                curve: Curves.easeInOutCubic);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  isHovered ? Colors.red : Colors.transparent,
-                              borderRadius: BorderRadius.circular(4.0),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 8),
-                              child: Text(
-                                'Home',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 16),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    const Spacer(),
+                    
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
                         return InkWell(
@@ -93,7 +63,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                'About',
+                                '#about',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -123,7 +93,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                'Services',
+                                '#services',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -153,7 +123,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                'Work',
+                                '#work',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -183,7 +153,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                'Contact',
+                                '#contact',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -206,7 +176,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 8),
                             child: Text(
-                              'Resume',
+                              '#resume',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontStyle: FontStyle.normal,
