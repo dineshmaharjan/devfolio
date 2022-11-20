@@ -24,40 +24,36 @@ class _ProjectsWebState extends State<ProjectsWeb>
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
-        Card(
-          child: InkWell(
-            onTap: () {},
-            child: Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              margin: const EdgeInsets.all(5),
-              padding: const EdgeInsets.all(5),
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                color: Colors.teal[100],
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/kiosk_app.png',
-                      height: 60,
-                      width: 80,
-                      fit: BoxFit.cover,
+        Row(
+          children: [
+            AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(55*_controller.value, 0 ),
+                    child: Card(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () {},
+                        child: Image.asset(
+                          'assets/images/kiosk_app.png',
+                          fit: BoxFit.cover,
+                          height: MediaQuery.of(context).size.width / 2 * 0.4,
+                        ),
+                      ),
                     ),
-                    const Text(
-                      'Kiosk App for Restaurant',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
+                  );
+                }),
+            const Text(
+              'Kiosk App for Restaurant',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24),
             ),
-          ),
+          ],
         )
       ],
     );
@@ -153,23 +149,30 @@ class _ProjectsWebState extends State<ProjectsWeb>
         padding: const EdgeInsets.symmetric(horizontal: 30),
         itemCount: 4,
         itemBuilder: (ctx, i) {
-          return Card(
-            child: Container(
-              height: 290,
-              width: 290,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              margin: const EdgeInsets.all(5),
-              padding: const EdgeInsets.all(5),
-              child: Container(
-                width: 100,
-                height: 100,
-                padding: const EdgeInsets.all(8),
-                color: Colors.teal[100],
-                child: const Text("He'd have you all unravel at the"),
-              ),
-            ),
-          );
+          return AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return Transform.translate(
+                  offset: Offset(0, 60 * _controller.value),
+                  child: Card(
+                    child: Container(
+                      height: 290,
+                      width: 290,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20)),
+                      margin: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        padding: const EdgeInsets.all(8),
+                        color: Colors.teal[100],
+                        child: const Text("He'd have you all unravel at the"),
+                      ),
+                    ),
+                  ),
+                );
+              });
         },
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
