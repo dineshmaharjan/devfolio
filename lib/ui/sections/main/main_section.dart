@@ -1,7 +1,6 @@
 import 'package:devfolio/controller/main_controller.dart';
 import 'package:devfolio/core/provider/scroll_provider.dart';
 import 'package:devfolio/core/utils/screen_utils.dart';
-import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:devfolio/ui/sections/about/about_section.dart';
 import 'package:devfolio/ui/sections/footer/footer.dart';
 import 'package:devfolio/ui/sections/getInTouch/get_in_touch_section.dart';
@@ -11,7 +10,6 @@ import 'package:devfolio/ui/sections/services/service_section.dart';
 import 'package:devfolio/ui/sections/technology/technology_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:particles_flutter/particles_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -47,23 +45,7 @@ class _MainSectionState extends State<MainSection> {
           : const EdgeInsets.only(left: 16, right: 16, bottom: 0),
       child: Stack(
         children: [
-          CircularParticle(
-            key: UniqueKey(),
-            awayRadius: 2,
-            numberOfParticles: 80,
-            speedOfParticles: 1,
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            onTapAnimation: true,
-            particleColor: Colors.white,
-            awayAnimationDuration: const Duration(milliseconds: 600),
-            maxParticleSize: 2,
-            isRandSize: true,
-            isRandomColor: false,
-            awayAnimationCurve: Curves.easeInOut,
-            enableHover: true,
-            connectDots: false,
-          ),
+        
           NotificationListener<ScrollEndNotification>(
             onNotification: (scrollEnd) {
               final metrics = scrollEnd.metrics;

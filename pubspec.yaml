@@ -33,7 +33,6 @@ dependencies:
   responsive_builder: ^0.4.2
   animated_text_kit: any
   dependencies:
-  particles_flutter: "^0.1.1"
   mobx: any
   flutter_mobx: any
   provider: any

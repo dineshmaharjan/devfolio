@@ -12,6 +12,8 @@ class _ProjectsWebState extends State<ProjectsWeb>
   late AnimationController _controller;
   // late Animation<double> _animation;
 
+  double multiplySize = 0.15;
+
   @override
   void initState() {
     _controller =
@@ -22,22 +24,48 @@ class _ProjectsWebState extends State<ProjectsWeb>
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
+
+    return Column(
       children: [
-        Expanded(
-          child: getProjectDescription(MediaQuery.of(context).size),
-        ),
-        getProjectImageWidget(),
+        Card(
+          child: InkWell(
+            onTap: () {},
+            child: Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                color: Colors.teal[100],
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/kiosk_app.png',
+                      height: 60,
+                      width: 80,
+                      fit: BoxFit.cover,
+                    ),
+                    const Text(
+                      'Kiosk App for Restaurant',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
 
   Widget getProjectDescription(Size size) {
     return SizedBox(
-      width: size.width/2 *0.20,
+      width: 100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,6 +91,97 @@ class _ProjectsWebState extends State<ProjectsWeb>
     );
   }
 
+  Widget getProjectGrid(_crossAxisCount, _aspectRatio) {
+    // return GridView.count(
+    //   primary: false,
+    //   shrinkWrap: true,
+    //   padding: const EdgeInsets.all(20),
+    //   crossAxisSpacing: 10,
+    //   mainAxisSpacing: 10,
+    //    childAspectRatio: (1 / .3),
+    //   crossAxisCount: 3,
+    //   children: <Widget>[
+    //     Container(
+    //       width: 100,
+    //       height: 100,
+    //       padding: const EdgeInsets.all(8),
+    //       color: Colors.teal[100],
+    //       child: const Text("He'd have you all unravel at the"),
+    //     ),
+    //        Container(
+    //       width: 100,
+    //       height: 100,
+    //       padding: const EdgeInsets.all(8),
+    //       color: Colors.teal[100],
+    //       child: const Text("He'd have you all unravel at the"),
+    //     ),
+    //     Container(
+    //       width: 100,
+    //       height: 100,
+    //       padding: const EdgeInsets.all(8),
+    //       color: Colors.teal[100],
+    //       child: const Text("He'd have you all unravel at the"),
+    //     ),
+    //     Container(
+    //       width: 100,
+    //       height: 100,
+    //       padding: const EdgeInsets.all(8),
+    //       color: Colors.teal[100],
+    //       child: const Text("He'd have you all unravel at the"),
+    //     ),
+    //     Container(
+    //       width: 100,
+    //       height: 100,
+    //       padding: const EdgeInsets.all(8),
+    //       color: Colors.teal[100],
+    //       child: const Text("He'd have you all unravel at the"),
+    //     ),
+    //     Container(
+    //       width: 100,
+    //       height: 100,
+    //       padding: const EdgeInsets.all(8),
+    //       color: Colors.teal[100],
+    //       child: const Text("He'd have you all unravel at the"),
+    //     ),
+
+    //   ],
+    // );
+
+    return Center(
+      child: GridView.builder(
+        shrinkWrap: true,
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        itemCount: 4,
+        itemBuilder: (ctx, i) {
+          return Card(
+            child: Container(
+              height: 290,
+              width: 290,
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
+              child: Container(
+                width: 100,
+                height: 100,
+                padding: const EdgeInsets.all(8),
+                color: Colors.teal[100],
+                child: const Text("He'd have you all unravel at the"),
+              ),
+            ),
+          );
+        },
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 1.0,
+          crossAxisSpacing: 0.0,
+          mainAxisSpacing: 5,
+          mainAxisExtent: 100,
+        ),
+      ),
+    );
+  }
+
   Widget getProjectImageWidget() {
     return Row(
       children: [
@@ -74,7 +193,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
               child: Image.asset(
                 "assets/images/kiosk_1.png",
                 height: 450,
-                width: 200,
+                width: 100,
                 fit: BoxFit.cover,
               ),
             );
@@ -88,7 +207,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
               child: Image.asset(
                 "assets/images/kiosk_2.png",
                 height: 450,
-                width: 200,
+                width: 100,
                 fit: BoxFit.cover,
               ),
             );
@@ -102,7 +221,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
               child: Image.asset(
                 "assets/images/kiosk_3.png",
                 height: 450,
-                width: 200,
+                width: 100,
                 fit: BoxFit.cover,
               ),
             );
