@@ -4,16 +4,14 @@ import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomeWeb extends StatelessWidget {
-  const HomeWeb({ Key? key }) : super(key: key);
+  const HomeWeb({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.9,
- 
       child: Column(
         children: [
-     
           // Positioned(
           //   child: Align(
           //     alignment: Alignment.center,
@@ -56,36 +54,32 @@ class HomeWeb extends StatelessWidget {
           //           ),
           //         ),
 
-                  // const Text(
-                  //   'I am Dinesh\n Maharjan',
-                  //   style: TextStyle(
-                  //       color: Colors.white,
-                  //       fontSize: 48,
-                  //       fontWeight: FontWeight.w700),
-                  // ),
-                  Wrap(
-                    children: socialIconURL
-                        .asMap()
-                        .entries
-                        .map(
-                          (e) => MouseHoverRegionBuilder(builder: (isHover) {
-                            return Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Image.network(
-                                e.value,
-                                height: 24,
-                                width: 24,
-                                color: isHover ? Colors.red : Colors.white,
-                              ),
-                            );
-                          }),
-                        )
-                        .toList(),
-                  )
-                ],
-              ),
-            ),
-          ),
+          // const Text(
+          //   'I am Dinesh\n Maharjan',
+          //   style: TextStyle(
+          //       color: Colors.white,
+          //       fontSize: 48,
+          //       fontWeight: FontWeight.w700),
+          // ),
+          Wrap(
+            children: socialIconURL
+                .asMap()
+                .entries
+                .map(
+                  (e) => MouseHoverRegionBuilder(builder: (isHover) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Image.network(
+                        e.value,
+                        height: 24,
+                        width: 24,
+                        color: isHover ? Colors.red : Colors.white,
+                      ),
+                    );
+                  }),
+                )
+                .toList(),
+          )
         ],
       ),
     );
