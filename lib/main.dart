@@ -59,6 +59,8 @@ class MyApp extends StatelessWidget {
                 !ScreenUtils.isWebOrDesktop(context)?  const EdgeInsets.all( 0 ):const EdgeInsets.only(left: 24,right: 24),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ScreenUtils.isWebOrDesktop(context)
                       ? const SizedBox(

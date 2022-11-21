@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AboutWeb extends StatelessWidget {
-  const AboutWeb({ Key? key }) : super(key: key);
+  const AboutWeb({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class AboutWeb extends StatelessWidget {
           height: 16,
         ),
         Container(
-          width: 128,
+          width: 100,
           height: 2,
           decoration: const BoxDecoration(
               color: Colors.white, shape: BoxShape.rectangle),
@@ -25,58 +25,93 @@ class AboutWeb extends StatelessWidget {
           height: 16,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.width * 0.15,
+          height: MediaQuery.of(context).size.height * 0.60,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset('assets/images/person.jpg'),
-              const SizedBox(
-                width: 24,
-              ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
+              Flexible(
+                flex: 1,
+                child: Stack(
+                  alignment: Alignment.center,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        SizedBox(
-                          height: 24,
-                        ),
-                        Text(
-                          "I'm Dinesh Maharjan",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    const Expanded(
-                      child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                        style: TextStyle(
+                    Positioned(
+                      bottom: 0,
+                      right: 10,
+                      child: Container(
+                        width: ((MediaQuery.of(context).size.height * 0.50)),
+                        height:
+                            ((MediaQuery.of(context).size.height * 0.60) - 60),
+                        margin: const EdgeInsets.only(right: 16),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                          border: Border.all(
                             color: Colors.white,
-                            fontSize: 18,
-                            height: 2,
-                            fontWeight: FontWeight.w400),
+                            width: 4,
+                          ),
+                        ),
                       ),
                     ),
-                    const Text(
-                      "More about",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400),
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: Container(
+                        margin: const EdgeInsets.only(
+                          left: 64,
+                          bottom: 48,
+                          top: 16,
+                        ),
+                        child: Image.asset(
+                          'assets/images/person.jpg',
+                          fit: BoxFit.cover,
+                          width:
+                              (MediaQuery.of(context).size.height * 0.60) - 100,
+                          height:
+                              (MediaQuery.of(context).size.height * 0.60) - 100,
+                        ),
+                      ),
                     ),
                   ],
+                ),
+              ),
+              
+              Flexible(
+                flex: 2,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 64,vertical: 64),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: const [
+                      SizedBox(
+                        height: 24,
+                      ),
+                      Text(
+                        "I'm Dinesh Maharjan",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(
+                        height: 24,
+                      ),
+                      Expanded(
+                        child: Text(
+                          "Hey! Myself Dinesh and I am Mobile Application developer in Kathmandu. I am passionate about mobile application development.\n",
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              height: 2,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

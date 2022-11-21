@@ -41,11 +41,10 @@ class _MainSectionState extends State<MainSection> {
 
     return Padding(
       padding: ScreenUtils.isWebOrDesktop(context)
-          ? const EdgeInsets.only(bottom: 8)
+          ? const EdgeInsets.only(bottom: 8,left: 24, right:24)
           : const EdgeInsets.only(left: 16, right: 16, bottom: 0),
       child: Stack(
         children: [
-        
           NotificationListener<ScrollEndNotification>(
             onNotification: (scrollEnd) {
               final metrics = scrollEnd.metrics;
@@ -63,6 +62,8 @@ class _MainSectionState extends State<MainSection> {
                   itemScrollController: _scrollProvider.itemScrollController,
                   itemPositionsListener:_scrollProvider.itemPositionListener,
                   itemCount: widgets.length,
+                  shrinkWrap: false,
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
                     return widgets[index];
                   },
