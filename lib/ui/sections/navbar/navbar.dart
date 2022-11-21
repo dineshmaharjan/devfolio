@@ -63,7 +63,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                '#about',
+                                'about',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -93,7 +93,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                '#services',
+                                'services',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -123,7 +123,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                '#work',
+                                'work',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -153,7 +153,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 8),
                               child: Text(
-                                '#contact',
+                                'contact',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontStyle: FontStyle.normal,
@@ -176,7 +176,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 8),
                             child: Text(
-                              '#resume',
+                              'resume',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontStyle: FontStyle.normal,
