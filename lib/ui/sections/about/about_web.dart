@@ -64,8 +64,9 @@ class AboutWeb extends StatelessWidget {
                           top: 16,
                         ),
                         child: Image.asset(
-                          'assets/images/person.jpg',
-                          fit: BoxFit.cover,
+                          'assets/images/dnes_three.png',
+                          filterQuality: FilterQuality.medium,
+                          fit: BoxFit.contain,
                           width:
                               (MediaQuery.of(context).size.height * 0.60) - 100,
                           height:

@@ -15,16 +15,19 @@ class HomeWeb extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          
           const Text(
             'Bonjour, I\'m',
             style: TextStyle(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.w700),
           ),
           const Text(
             'Dinesh Maharjan',
             style: TextStyle(
-                color: Colors.white, fontSize: 48, fontWeight: FontWeight.w700),
+                color: Colors.white,
+                fontSize: 48,
+                fontWeight: FontWeight.w700),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,7 +46,7 @@ class HomeWeb extends StatelessWidget {
               DefaultTextStyle(
                 maxLines: 5,
                 style: GoogleFonts.gaegu(
-                 textStyle: const TextStyle(
+                  textStyle: const TextStyle(
                       color: Colors.redAccent,
                       fontSize: 48,
                       fontWeight: FontWeight.w700),
