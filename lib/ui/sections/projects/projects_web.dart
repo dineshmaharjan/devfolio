@@ -49,7 +49,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
             const Text(
               'Kiosk App for Restaurant',
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 24),
             ),
@@ -69,7 +69,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
           Text(
             'Kiosk App for Restaurant',
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 48),
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 48),
           ),
           Text(
             'Kiosk app is used to order foods from menu for Dinne-in , and order items is print with KOT.',
@@ -77,7 +77,7 @@ class _ProjectsWebState extends State<ProjectsWeb>
             textDirection: TextDirection.rtl,
             textAlign: TextAlign.justify,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.normal,
               fontSize: 24,
             ),

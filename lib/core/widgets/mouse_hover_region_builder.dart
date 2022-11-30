@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MouseHoverRegionBuilder extends StatefulWidget {
   final Function(bool isHovered) builder;
 
-  MouseHoverRegionBuilder({Key? key, required this.builder}) : super(key: key);
+  const MouseHoverRegionBuilder({Key? key, required this.builder}) : super(key: key);
 
   @override
   State<MouseHoverRegionBuilder> createState() =>

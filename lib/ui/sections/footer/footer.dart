@@ -8,7 +8,7 @@ class FooterWidget extends StatelessWidget {
     return const Center(
       child: Text(
         'Made in 💙 with Flutter \u00a9 Copyright 2022, Maharjan Dinesh',
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.black),
       ),
     );
   }

@@ -21,7 +21,7 @@ class GetInTouchTablet extends StatelessWidget {
           width: 128,
           height: 2,
           decoration: const BoxDecoration(
-              color: Colors.white, shape: BoxShape.rectangle),
+              color: Colors.black, shape: BoxShape.rectangle),
         ),
         Row(
           children: [
@@ -48,7 +48,7 @@ class GetInTouchTablet extends StatelessWidget {
                       'Address',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -56,7 +56,7 @@ class GetInTouchTablet extends StatelessWidget {
                       'Basundhara,Chauki',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -87,7 +87,7 @@ class GetInTouchTablet extends StatelessWidget {
                       'Phone',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -95,7 +95,7 @@ class GetInTouchTablet extends StatelessWidget {
                       '+977-9841888062',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -126,7 +126,7 @@ class GetInTouchTablet extends StatelessWidget {
                       'Email',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -134,7 +134,7 @@ class GetInTouchTablet extends StatelessWidget {
                       'www.maharjandinesh@gmail.com',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),

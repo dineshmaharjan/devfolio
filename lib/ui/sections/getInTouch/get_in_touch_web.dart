@@ -21,7 +21,7 @@ class GetInTouchWeb extends StatelessWidget {
           width: 128,
           height: 2,
           decoration: const BoxDecoration(
-              color: Colors.white, shape: BoxShape.rectangle),
+              color: Colors.black, shape: BoxShape.rectangle),
         ),
         Row(
           children: [
@@ -47,14 +47,14 @@ class GetInTouchWeb extends StatelessWidget {
                     Text(
                       'Address',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
                       'Basundhara,Chauki',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -84,14 +84,14 @@ class GetInTouchWeb extends StatelessWidget {
                     Text(
                       'Phone',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
                       '+977-9841888062',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
@@ -121,14 +121,14 @@ class GetInTouchWeb extends StatelessWidget {
                     Text(
                       'Email',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
                       'www.maharjandinesh@gmail.com',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),

@@ -19,12 +19,12 @@ class HomeTablet extends StatelessWidget {
           const Text(
             'Bonjour, I\'m',
             style: TextStyle(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
+                color: Colors.black, fontSize: 24, fontWeight: FontWeight.w700),
           ),
           const Text(
             'Dinesh Maharjan',
             style: TextStyle(
-                color: Colors.white, fontSize: 48, fontWeight: FontWeight.w700),
+                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w700),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +33,7 @@ class HomeTablet extends StatelessWidget {
               const Text(
                 'I\'m',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 48,
                     fontWeight: FontWeight.w700),
               ),
@@ -55,7 +55,7 @@ class HomeTablet extends StatelessWidget {
                     TypewriterAnimatedText(
                       'Mobile Application Developer',
                       textStyle: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 48,
                           fontWeight: FontWeight.w700),
                       speed: const Duration(milliseconds: 80),
@@ -63,7 +63,7 @@ class HomeTablet extends StatelessWidget {
                     TypewriterAnimatedText(
                       'Freelancer',
                       textStyle: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 48,
                           fontWeight: FontWeight.w700),
                       speed: const Duration(milliseconds: 80),
@@ -71,7 +71,7 @@ class HomeTablet extends StatelessWidget {
                     TypewriterAnimatedText(
                       'Musician',
                       textStyle: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 48,
                           fontWeight: FontWeight.w700),
                       speed: const Duration(milliseconds: 80),
@@ -79,7 +79,7 @@ class HomeTablet extends StatelessWidget {
                     TypewriterAnimatedText(
                       'Traveller',
                       textStyle: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 48,
                           fontWeight: FontWeight.w700),
                       speed: const Duration(milliseconds: 80),
@@ -102,7 +102,7 @@ class HomeTablet extends StatelessWidget {
                         e.value,
                         height: 24,
                         width: 24,
-                        color: isHover ? Colors.red : Colors.white,
+                        color: isHover ? Colors.red : Colors.black,
                       ),
                     );
                   }),

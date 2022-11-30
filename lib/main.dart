@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget {
       title: 'DevFolio',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.gaeguTextTheme(),
+        textTheme: GoogleFonts.sourceCodeProTextTheme(),
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: const Color(0xFF040404),
+        scaffoldBackgroundColor:const Color(0xFFFFFFFF),
       ),
       home: Builder(
         builder: (context) {

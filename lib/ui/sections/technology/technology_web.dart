@@ -20,7 +20,7 @@ class TechnologyWeb extends StatelessWidget {
           width: 128,
           height: 2,
           decoration: const BoxDecoration(
-              color: Colors.white, shape: BoxShape.rectangle),
+              color: Colors.black, shape: BoxShape.rectangle),
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,

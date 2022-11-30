@@ -44,7 +44,6 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
                         return InkWell(
@@ -53,22 +52,15 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   index: 1,
                                   duration: const Duration(seconds: 2),
                                   curve: Curves.easeInOutCubic),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  isHovered ? Colors.red : Colors.transparent,
-                              borderRadius: BorderRadius.circular(4.0),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 8),
-                              child: Text(
-                                'about',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 16),
-                              ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
+                            child: Text(
+                              'About',
+                              style: TextStyle(
+                                 color: isHovered ? Colors.yellow : Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
                             ),
                           ),
                         );
@@ -83,107 +75,80 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                                   index: 2,
                                   duration: const Duration(seconds: 2),
                                   curve: Curves.easeInOutCubic),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  isHovered ? Colors.red : Colors.transparent,
-                              borderRadius: BorderRadius.circular(4.0),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 8),
-                              child: Text(
-                                'services',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 16),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    const Spacer(),
-                    MouseHoverRegionBuilder(
-                      builder: (isHovered) {
-                        return InkWell(
-                          onTap: () => _scrollProvider.itemScrollController
-                              .scrollTo(
-                                  index: 4,
-                                  duration: const Duration(seconds: 2),
-                                  curve: Curves.easeInOutCubic),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  isHovered ? Colors.red : Colors.transparent,
-                              borderRadius: BorderRadius.circular(4.0),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 8),
-                              child: Text(
-                                'work',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 16),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    const Spacer(),
-                    MouseHoverRegionBuilder(
-                      builder: (isHovered) {
-                        return InkWell(
-                          onTap: () => _scrollProvider.itemScrollController
-                              .scrollTo(
-                                  index: 4,
-                                  duration: const Duration(seconds: 2),
-                                  curve: Curves.easeInOutCubic),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color:
-                                  isHovered ? Colors.red : Colors.transparent,
-                              borderRadius: BorderRadius.circular(4.0),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 8),
-                              child: Text(
-                                'contact',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 16),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    const Spacer(),
-                    MouseHoverRegionBuilder(
-                      builder: (isHovered) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: isHovered ? Colors.red : Colors.transparent,
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 8),
                             child: Text(
-                              'resume',
+                              'Service',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.normal,
+                                 color: isHovered ? Colors.yellow : Colors.black,
+                                  fontWeight: FontWeight.bold,
                                   fontSize: 16),
                             ),
                           ),
                         );
+                      },
+                    ),
+                    const Spacer(),
+                    MouseHoverRegionBuilder(
+                      builder: (isHovered) {
+                        return InkWell(
+                          onTap: () => _scrollProvider.itemScrollController
+                              .scrollTo(
+                                  index: 4,
+                                  duration: const Duration(seconds: 2),
+                                  curve: Curves.easeInOutCubic),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
+                            child: Text(
+                              'Work',
+                              style: TextStyle(
+                                 color: isHovered ? Colors.yellow : Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    const Spacer(),
+                    MouseHoverRegionBuilder(
+                      builder: (isHovered) {
+                        return InkWell(
+                          onTap: () => _scrollProvider.itemScrollController
+                              .scrollTo(
+                                  index: 4,
+                                  duration: const Duration(seconds: 2),
+                                  curve: Curves.easeInOutCubic),
+                          child:Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
+                            child: Text(
+                              'Contact',
+                              style: TextStyle(
+                                 color: isHovered ? Colors.yellow : Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    const Spacer(),
+                    MouseHoverRegionBuilder(
+                      builder: (isHovered) {
+                        return Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
+                            child: Text(
+                              'Resume',
+                              style: TextStyle(
+                                 color: isHovered ? Colors.yellow : Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
+                          );
                       },
                     ),
                   ],

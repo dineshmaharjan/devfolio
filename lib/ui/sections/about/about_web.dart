@@ -19,7 +19,7 @@ class AboutWeb extends StatelessWidget {
           width: 100,
           height: 2,
           decoration: const BoxDecoration(
-              color: Colors.white, shape: BoxShape.rectangle),
+              color: Colors.black, shape: BoxShape.rectangle),
         ),
         const SizedBox(
           height: 16,
@@ -47,7 +47,7 @@ class AboutWeb extends StatelessWidget {
                             Radius.circular(8),
                           ),
                           border: Border.all(
-                            color: Colors.white,
+                            color: Colors.black,
                             width: 4,
                           ),
                         ),
@@ -93,7 +93,7 @@ class AboutWeb extends StatelessWidget {
                       Text(
                         "I'm Dinesh Maharjan",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 32,
                             fontWeight: FontWeight.w600),
                       ),
@@ -105,7 +105,7 @@ class AboutWeb extends StatelessWidget {
                           "Hey! Myself Dinesh and I am Mobile Application developer in Kathmandu. I am passionate about mobile application development.\n",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 24,
                               height: 2,
                               fontWeight: FontWeight.w400),

@@ -12,11 +12,11 @@ class MobileNavigationDrawer extends StatelessWidget {
           children: [
           
             ListTile(
-              leading: const Icon(Icons.home, color: Colors.white),
+              leading: const Icon(Icons.home, color: Colors.black),
               title: const Text(
                 'Home',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontStyle: FontStyle.normal,
                     fontSize: 16),
               ),
@@ -25,11 +25,11 @@ class MobileNavigationDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person, color: Colors.white),
+              leading: const Icon(Icons.person, color: Colors.black),
               title: const Text(
                 'About',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontStyle: FontStyle.normal,
                     fontSize: 16),
               ),
@@ -38,11 +38,11 @@ class MobileNavigationDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.build, color: Colors.white),
+              leading: const Icon(Icons.build, color: Colors.black),
               title: const Text(
                 'Services',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontStyle: FontStyle.normal,
                     fontSize: 16),
               ),
@@ -51,11 +51,11 @@ class MobileNavigationDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.work, color: Colors.white),
+              leading: const Icon(Icons.work, color: Colors.black),
               title: const Text(
                 'Work',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontStyle: FontStyle.normal,
                     fontSize: 16),
               ),
@@ -64,11 +64,11 @@ class MobileNavigationDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.contact_page, color: Colors.white),
+              leading: const Icon(Icons.contact_page, color: Colors.black),
               title: const Text(
                 'Contact',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontStyle: FontStyle.normal,
                     fontSize: 16),
               ),
@@ -80,7 +80,7 @@ class MobileNavigationDrawer extends StatelessWidget {
               title: const Text(
                 'Resume',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontStyle: FontStyle.normal,
                     fontSize: 16),
               ),
