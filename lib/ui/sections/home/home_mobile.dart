@@ -1,114 +1,128 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:devfolio/core/utils/social_utils.dart';
 import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeMobile extends StatelessWidget {
-  const HomeMobile({ Key? key }) : super(key: key);
+  const HomeMobile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      width: double.infinity,
       height: MediaQuery.of(context).size.height,
-      child: Column(
+      constraints: const BoxConstraints(maxWidth: 700),
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          
-          const Text(
-            'Bonjour, I\'m',
-            style: TextStyle(
-                color: Colors.black, fontSize: 24, fontWeight: FontWeight.w700),
-          ),
-          const Text(
-            'Dinesh Maharjan',
-            style: TextStyle(
-                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w700),
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'I\'m',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                width: 8,
-              ),
-              DefaultTextStyle(
-                maxLines: 5,
-                style: GoogleFonts.gaegu(
-                 textStyle: const TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 48,
+          Expanded(
+            flex: 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Bonjour, I\'m',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
                       fontWeight: FontWeight.w700),
                 ),
-                child: AnimatedTextKit(
-                  isRepeatingAnimation: false,
-                  repeatForever: true,
-                  animatedTexts: [
-                    TypewriterAnimatedText(
-                      'Mobile Application Developer',
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 48,
-                          fontWeight: FontWeight.w700),
-                      speed: const Duration(milliseconds: 80),
-                    ),
-                    TypewriterAnimatedText(
-                      'Freelancer',
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 48,
-                          fontWeight: FontWeight.w700),
-                      speed: const Duration(milliseconds: 80),
-                    ),
-                    TypewriterAnimatedText(
-                      'Musician',
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 48,
-                          fontWeight: FontWeight.w700),
-                      speed: const Duration(milliseconds: 80),
-                    ),
-                    TypewriterAnimatedText(
-                      'Traveller',
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 48,
-                          fontWeight: FontWeight.w700),
-                      speed: const Duration(milliseconds: 80),
-                    ),
-                  ],
-                  onTap: () {},
+                const SizedBox(
+                  height: 4,
                 ),
-              ),
-            ],
-          ),
-          Wrap(
-            children: socialIconURL
-                .asMap()
-                .entries
-                .map(
-                  (e) => MouseHoverRegionBuilder(builder: (isHover) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Image.network(
-                        e.value,
-                        height: 24,
-                        width: 24,
-                        color: isHover ? Colors.red : Colors.black,
+                const Text(
+                  'Dinesh Maharjan',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Center(
+                  child: Text(
+                    'I\'m Mobile application developer based in #Nepal. I strive to build immersive and beautiful mobile applications through carefully crafted code and user-centric desing ',
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Wrap(
+                  children: socialIconURL
+                      .asMap()
+                      .entries
+                      .map(
+                        (e) => MouseHoverRegionBuilder(builder: (isHover) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Image.network(
+                              e.value,
+                              height: 24,
+                              width: 24,
+                              color: isHover ? Colors.red : Colors.black,
+                            ),
+                          );
+                        }),
+                      )
+                      .toList(),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      const Color(0xFFFCAE16),
+                    ),
+                    overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                      (Set<MaterialState> states) {
+                        if (states.contains(MaterialState.hovered)) {
+                          return Colors.yellow[700]!.withOpacity(0.5);
+                        }
+                        if (states.contains(MaterialState.focused) ||
+                            states.contains(MaterialState.pressed)) {
+                          return Colors.grey.withOpacity(0.12);
+                        }
+                        return null; // Defer to the widget's default.
+                      },
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Contact Me',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
                       ),
-                    );
-                  }),
-                )
-                .toList(),
-          )
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // Align(
+          //   alignment: Alignment.centerRight,
+          //   child: Stack(
+          //     children: [
+          //       Image.asset(
+          //         'assets/images/profile_dnes.png',
+          //         filterQuality: FilterQuality.medium,
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
