@@ -47,6 +47,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
                         return InkWell(
+                          focusColor: Colors.transparent,
                           onTap: () => _scrollProvider.itemScrollController
                               .scrollTo(
                                   index: 1,
@@ -58,7 +59,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             child: Text(
                               'About',
                               style: TextStyle(
-                                 color: isHovered ? Colors.yellow : Colors.black,
+                                 color: isHovered ? const Color(0xFFFCAE16) : Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16),
                             ),
@@ -70,6 +71,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
                         return InkWell(
+                          focusColor: Colors.transparent,
                           onTap: () => _scrollProvider.itemScrollController
                               .scrollTo(
                                   index: 2,
@@ -81,7 +83,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             child: Text(
                               'Service',
                               style: TextStyle(
-                                 color: isHovered ? Colors.yellow : Colors.black,
+                                 color: isHovered ? const Color(0xFFFCAE16) : Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16),
                             ),
@@ -93,6 +95,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
                         return InkWell(
+                          focusColor: Colors.transparent,
                           onTap: () => _scrollProvider.itemScrollController
                               .scrollTo(
                                   index: 4,
@@ -104,7 +107,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             child: Text(
                               'Work',
                               style: TextStyle(
-                                 color: isHovered ? Colors.yellow : Colors.black,
+                                 color: isHovered ? const Color(0xFFFCAE16) : Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16),
                             ),
@@ -116,9 +119,10 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                     MouseHoverRegionBuilder(
                       builder: (isHovered) {
                         return InkWell(
+                          focusColor: Colors.transparent,
                           onTap: () => _scrollProvider.itemScrollController
                               .scrollTo(
-                                  index: 4,
+                                  index: 5,
                                   duration: const Duration(seconds: 2),
                                   curve: Curves.easeInOutCubic),
                           child:Padding(
@@ -127,7 +131,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             child: Text(
                               'Contact',
                               style: TextStyle(
-                                 color: isHovered ? Colors.yellow : Colors.black,
+                                 color: isHovered ? const Color(0xFFFCAE16) : Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16),
                             ),
@@ -144,7 +148,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                             child: Text(
                               'Resume',
                               style: TextStyle(
-                                 color: isHovered ? Colors.yellow : Colors.black,
+                                 color: isHovered ? const Color(0xFFFCAE16) : Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16),
                             ),

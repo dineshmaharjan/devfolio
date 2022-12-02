@@ -5,137 +5,209 @@ class GetInTouchMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          'Get In Touch',
-          style: TextStyle(
-              color: Colors.grey, fontSize: 48, fontWeight: FontWeight.w800),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        Container(
-          width: 128,
-          height: 2,
-          decoration: const BoxDecoration(
-              color: Colors.black, shape: BoxShape.rectangle),
-        ),
-        Column(
-          children: [
-            Container(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.25),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.height / 2,
+      margin: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Get In Touch',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.home,
-                    size: 32,
-                    color: Colors.red,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Text(
-                    'Address',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    'Basundhara,Chauki',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
+              const SizedBox(
+                height: 24,
               ),
+              Container(
+                width: 128,
+                height: 2,
+                decoration: const BoxDecoration(
+                    color: Colors.black, shape: BoxShape.rectangle),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              const Text(
+                'Tokha-8, Basundhara Chauki',
+                style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              const Text(
+                'Kathmandu, Nepal',
+                style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              const Text(
+                '+977-9841888062',
+                style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              const Text(
+                'www.maharjandinesh@gmail.com',
+                style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          Form(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Your Name',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4.0),
+                      ),
+                    ),
+                  ),
+                  onSaved: (String? value) {
+                    // This optional block of code can be used to run
+                    // code when the user saves the form.
+                  },
+                  validator: (String? value) {
+                    return (value != null && value.isEmpty)
+                        ? 'Name shouldn\'t be empty'
+                        : null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Your Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4.0),
+                      ),
+                    ),
+                  ),
+                  onSaved: (String? value) {
+                    // This optional block of code can be used to run
+                    // code when the user saves the form.
+                  },
+                  validator: (String? value) {
+                    return (value != null && value.isEmpty)
+                        ? 'Name shouldn\'t be empty'
+                        : null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Subject',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4.0),
+                      ),
+                    ),
+                  ),
+                  onSaved: (String? value) {
+                    // This optional block of code can be used to run
+                    // code when the user saves the form.
+                  },
+                  validator: (String? value) {
+                    return (value != null && value.isEmpty)
+                        ? 'Name shouldn\'t be empty'
+                        : null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  minLines: 7,
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  decoration: const InputDecoration(
+                    labelText: 'Message',
+                    alignLabelWithHint: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4.0),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      const Color(0xFFFCAE16),
+                    ),
+                    shape:
+                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ),
+                    ),
+                    overlayColor:
+                        MaterialStateProperty.resolveWith<Color?>(
+                      (Set<MaterialState> states) {
+                        if (states.contains(MaterialState.hovered)) {
+                          return const Color(0xFFFCAE16).withOpacity(0.5);
+                        }
+                        if (states.contains(MaterialState.focused) ||
+                            states.contains(MaterialState.pressed)) {
+                          return Colors.grey.withOpacity(0.12);
+                        }
+                        return null; // Defer to the widget's default.
+                      },
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Send Message',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Container(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.25),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.phone,
-                    size: 32,
-                    color: Colors.red,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Text(
-                    'Phone',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    '+977-9841888062',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.25),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.email,
-                    size: 32,
-                    color: Colors.red,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Text(
-                    'Email',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    'www.maharjandinesh@gmail.com',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        )
-      ],
+          ),
+          const SizedBox(
+            height: 48,
+          ),
+        ],
+      ),
     );
   }
 }

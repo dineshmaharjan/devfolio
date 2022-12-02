@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.sourceCodeProTextTheme(),
-        primarySwatch: Colors.blue,
         scaffoldBackgroundColor:const Color(0xFFFFFFFF),
       ),
       home: Builder(

@@ -66,14 +66,14 @@ class HomeWeb extends StatelessWidget {
                               e.value,
                               height: 24,
                               width: 24,
-                              color: isHover ? Colors.red : Colors.black,
+                              color: isHover ? const Color(0xFFFCAE16) : Colors.black,
                             ),
                           );
                         }),
                       )
                       .toList(),
                 ),
-                 const SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 TextButton(
@@ -81,10 +81,15 @@ class HomeWeb extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xFFFCAE16),
                     ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ),
+                    ),
                     overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
                         if (states.contains(MaterialState.hovered)) {
-                          return  Colors.yellow[700]!.withOpacity(0.5);
+                          return const Color(0xFFFCAE16).withOpacity(0.5);
                         }
                         if (states.contains(MaterialState.focused) ||
                             states.contains(MaterialState.pressed)) {

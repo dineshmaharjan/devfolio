@@ -24,6 +24,7 @@ class _MouseHoverRegionBuilderState extends State<MouseHoverRegionBuilder> {
       onExit: (_) => onEntered(false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
+        color: Colors.transparent,
         child: widget.builder(isWidgetHovered),
       ),
     );
