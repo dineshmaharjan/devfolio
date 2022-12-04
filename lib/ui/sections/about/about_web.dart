@@ -1,3 +1,5 @@
+import 'package:devfolio/core/utils/constants.dart';
+import 'package:devfolio/core/widgets/horizontal_progress_label_widget.dart';
 import 'package:flutter/material.dart';
 
 class AboutWeb extends StatelessWidget {
@@ -22,97 +24,137 @@ class AboutWeb extends StatelessWidget {
               color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
         ),
         const SizedBox(
-          height: 16,
+          height: 24,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.60,
+          height: MediaQuery.of(context).size.height * 0.80,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Flexible(
-                flex: 1,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Positioned(
-                      bottom: 0,
-                      right: 10,
-                      child: Container(
-                        width: ((MediaQuery.of(context).size.height * 0.50)),
-                        height:
-                            ((MediaQuery.of(context).size.height * 0.60) - 60),
-                        margin: const EdgeInsets.only(right: 16),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(8),
-                          ),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 4,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: Container(
-                        margin: const EdgeInsets.only(
-                          left: 64,
-                          bottom: 48,
-                          top: 16,
-                        ),
-                        child: Image.asset(
-                          'assets/images/dnes_three.png',
-                          filterQuality: FilterQuality.medium,
-                          fit: BoxFit.contain,
-                          width:
-                              (MediaQuery.of(context).size.height * 0.60) - 100,
-                          height:
-                              (MediaQuery.of(context).size.height * 0.60) - 100,
-                        ),
-                      ),
-                    ),
-                  ],
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/images/dnes_two.jpg',
+                  height: MediaQuery.of(context).size.height / 2,
+                  filterQuality: FilterQuality.medium,
+                  fit: BoxFit.contain,
                 ),
               ),
-              
-              Flexible(
-                flex: 2,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 64,vertical: 64),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: const [
-                      SizedBox(
-                        height: 24,
-                      ),
-                      Text(
-                        "I'm Dinesh Maharjan",
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 64, vertical: 64),
+                child: Column(
+                  children: [
+                    const Center(
+                      child: Text(
+                        aboutUs,
+                        textAlign: TextAlign.justify,
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 32,
-                            fontWeight: FontWeight.w600),
+                            fontSize: 18,
+                            height: 1.5,
+                            fontWeight: FontWeight.w500),
                       ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Hey! Myself Dinesh and I am Mobile Application developer in Kathmandu. I am passionate about mobile application development.\n",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 24,
-                              height: 2,
-                              fontWeight: FontWeight.w400),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Android",
+                            progressValue: 0.82,
+                            tweenEnd: 75,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Flutter",
+                            progressValue: 0.78,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Flutter-Web",
+                            progressValue: 0.58,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "iOS",
+                            progressValue: 0.25,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Java",
+                            progressValue: 0.75,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Kotlin",
+                            progressValue: 0.77,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Python",
+                            progressValue: 0.61,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Expanded(
+                          child: HorizontalProgressLabelWidget(
+                            title: "Game Development",
+                            progressValue: 0.45,
+                            tweenEnd: 75,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],

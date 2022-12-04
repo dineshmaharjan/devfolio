@@ -1,0 +1,2 @@
+const String aboutUs =
+    "I'm a mobile application developer based in Kathmandu,Nepal. I can develope an application from scratch and using flutter and native. I presently work as a Software Engineer for Fonepay, and I'm also working on other side projects to sharpe my skills. I am always strive to learn about the new technologies and frameworks.\n\nBesides this, I love and enjoy to play music and explore to new places.";
