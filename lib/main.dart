@@ -53,26 +53,29 @@ class MyApp extends StatelessWidget {
             drawer: !ScreenUtils.isWebOrDesktop(context)
                 ? const MobileNavigationDrawer()
                 : null,
-            body: Padding(
-              padding:
-                !ScreenUtils.isWebOrDesktop(context)?  const EdgeInsets.all( 0 ):const EdgeInsets.only(left: 24,right: 24),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ScreenUtils.isWebOrDesktop(context)
-                      ? const SizedBox(
-                          height: 16.0,
-                        )
-                      : const SizedBox(),
-                  ScreenUtils.isWebOrDesktop(context)
-                      ? const NavBarWidget()
-                      : const SizedBox(),
-                  const Expanded(
-                    child: MainSection(),
-                  ),
-                ],
+            body: Container(
+               constraints: BoxConstraints(minWidth: MediaQuery.of(context).size.width, maxWidth: MediaQuery.of(context).size.width),
+              child: Padding(
+                padding:
+                  !ScreenUtils.isWebOrDesktop(context)?  const EdgeInsets.all( 0 ):const EdgeInsets.only(left: 24,right: 24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ScreenUtils.isWebOrDesktop(context)
+                        ? const SizedBox(
+                            height: 16.0,
+                          )
+                        : const SizedBox(),
+                    ScreenUtils.isWebOrDesktop(context)
+                        ? const NavBarWidget()
+                        : const SizedBox(),
+                    const Expanded(
+                      child: MainSection(),
+                    ),
+                  ],
+                ),
               ),
             ),
           );

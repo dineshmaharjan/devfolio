@@ -8,9 +8,9 @@ class AboutWeb extends StatelessWidget {
     return Column(
       children: [
         const Text(
-          'ABOUT ME',
+          'About Me',
           style: TextStyle(
-              color: Colors.grey, fontSize: 48, fontWeight: FontWeight.w800),
+              color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
         ),
         const SizedBox(
           height: 16,
@@ -19,7 +19,7 @@ class AboutWeb extends StatelessWidget {
           width: 100,
           height: 2,
           decoration: const BoxDecoration(
-              color: Colors.black, shape: BoxShape.rectangle),
+              color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
         ),
         const SizedBox(
           height: 16,
