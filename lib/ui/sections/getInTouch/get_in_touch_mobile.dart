@@ -31,7 +31,7 @@ class GetInTouchMobile extends StatelessWidget {
                 width: 128,
                 height: 2,
                 decoration: const BoxDecoration(
-                    color: Colors.black, shape: BoxShape.rectangle),
+                    color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
               ),
               const SizedBox(
                 height: 16,
@@ -48,16 +48,6 @@ class GetInTouchMobile extends StatelessWidget {
               ),
               const Text(
                 'Kathmandu, Nepal',
-                style: TextStyle(
-                    color: Colors.black54,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              const Text(
-                '+977-9841888062',
                 style: TextStyle(
                     color: Colors.black54,
                     fontSize: 16,
@@ -168,14 +158,12 @@ class GetInTouchMobile extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all<Color>(
                       const Color(0xFFFCAE16),
                     ),
-                    shape:
-                        MaterialStateProperty.all<RoundedRectangleBorder>(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                       ),
                     ),
-                    overlayColor:
-                        MaterialStateProperty.resolveWith<Color?>(
+                    overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
                         if (states.contains(MaterialState.hovered)) {
                           return const Color(0xFFFCAE16).withOpacity(0.5);

@@ -7,7 +7,6 @@ import 'package:devfolio/ui/sections/getInTouch/get_in_touch_section.dart';
 import 'package:devfolio/ui/sections/home/home_section.dart';
 import 'package:devfolio/ui/sections/projects/projects_section.dart';
 import 'package:devfolio/ui/sections/services/service_section.dart';
-import 'package:devfolio/ui/sections/technology/technology_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
@@ -21,17 +20,18 @@ class MainSection extends StatefulWidget {
 }
 
 class _MainSectionState extends State<MainSection> {
-  // final ScrollController _scrollController = ScrollController();
 
   var widgets = [
     const HomeSection(),
     const AboutSection(),
     const ServiceSection(),
-    const TechnologySection(),
     const ProjectsSection(),
     const GetInTouchSection(),
     const FooterWidget(),
   ];
+
+
+
 
   @override
   Widget build(BuildContext context) {

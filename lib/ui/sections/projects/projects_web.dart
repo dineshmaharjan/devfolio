@@ -24,125 +24,82 @@ class _ProjectsWebState extends State<ProjectsWeb>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            AnimatedBuilder(
-                animation: _controller,
-                builder: (context, child) {
-                  return Transform.translate(
-                    offset: Offset(55*_controller.value, 0 ),
-                    child: Card(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Image.asset(
-                          'assets/images/kiosk_app.png',
-                          fit: BoxFit.cover,
-                          height: MediaQuery.of(context).size.width / 2 * 0.4,
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-            const Text(
-              'Kiosk App for Restaurant',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24),
-            ),
-          ],
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Projects',
+            style: TextStyle(
+                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Container(
+            width: 128,
+            height: 2,
+            decoration: const BoxDecoration(
+                color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
+          ),
+          Column(
+            children: [
+              getProjectDescription(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
-  Widget getProjectDescription(Size size) {
+  Widget getProjectDescription() {
     return SizedBox(
       width: 100,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          Text(
-            'Kiosk App for Restaurant',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 48),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(
+            "assets/images/portfolio_one.png",
+            width: MediaQuery.of(context).size.height * 0.60,
+            height: MediaQuery.of(context).size.height * 0.20,
+            fit: BoxFit.contain,
+            filterQuality: FilterQuality.medium,
           ),
-          Text(
-            'Kiosk app is used to order foods from menu for Dinne-in , and order items is print with KOT.',
-            maxLines: 1,
-            textDirection: TextDirection.rtl,
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.normal,
-              fontSize: 24,
-            ),
-          )
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                'Kiosk App for Restaurant',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 48),
+              ),
+              Text(
+                'Kiosk app is used to order foods from menu for Dinne-in , and order items is print with KOT.',
+                maxLines: 1,
+                textDirection: TextDirection.rtl,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 24,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
   }
 
   Widget getProjectGrid(_crossAxisCount, _aspectRatio) {
-    // return GridView.count(
-    //   primary: false,
-    //   shrinkWrap: true,
-    //   padding: const EdgeInsets.all(20),
-    //   crossAxisSpacing: 10,
-    //   mainAxisSpacing: 10,
-    //    childAspectRatio: (1 / .3),
-    //   crossAxisCount: 3,
-    //   children: <Widget>[
-    //     Container(
-    //       width: 100,
-    //       height: 100,
-    //       padding: const EdgeInsets.all(8),
-    //       color: Colors.teal[100],
-    //       child: const Text("He'd have you all unravel at the"),
-    //     ),
-    //        Container(
-    //       width: 100,
-    //       height: 100,
-    //       padding: const EdgeInsets.all(8),
-    //       color: Colors.teal[100],
-    //       child: const Text("He'd have you all unravel at the"),
-    //     ),
-    //     Container(
-    //       width: 100,
-    //       height: 100,
-    //       padding: const EdgeInsets.all(8),
-    //       color: Colors.teal[100],
-    //       child: const Text("He'd have you all unravel at the"),
-    //     ),
-    //     Container(
-    //       width: 100,
-    //       height: 100,
-    //       padding: const EdgeInsets.all(8),
-    //       color: Colors.teal[100],
-    //       child: const Text("He'd have you all unravel at the"),
-    //     ),
-    //     Container(
-    //       width: 100,
-    //       height: 100,
-    //       padding: const EdgeInsets.all(8),
-    //       color: Colors.teal[100],
-    //       child: const Text("He'd have you all unravel at the"),
-    //     ),
-    //     Container(
-    //       width: 100,
-    //       height: 100,
-    //       padding: const EdgeInsets.all(8),
-    //       color: Colors.teal[100],
-    //       child: const Text("He'd have you all unravel at the"),
-    //     ),
-
-    //   ],
-    // );
-
     return Center(
       child: GridView.builder(
         shrinkWrap: true,

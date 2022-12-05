@@ -2,18 +2,18 @@ import 'package:devfolio/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutMobile extends StatelessWidget {
-  const AboutMobile({ Key? key }) : super(key: key);
+  const AboutMobile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-   return Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
           const Text(
             'About Me',
             style: TextStyle(
-                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
+                color: Colors.black, fontSize: 32, fontWeight: FontWeight.w800),
           ),
           const SizedBox(
             height: 16,
@@ -250,6 +250,9 @@ class AboutMobile extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 48,
           ),
         ],
       ),

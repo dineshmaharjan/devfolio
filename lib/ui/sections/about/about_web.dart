@@ -1,5 +1,4 @@
 import 'package:devfolio/core/utils/constants.dart';
-import 'package:devfolio/core/widgets/horizontal_progress_label_widget.dart';
 import 'package:flutter/material.dart';
 
 class AboutWeb extends StatelessWidget {
@@ -29,7 +28,7 @@ class AboutWeb extends StatelessWidget {
             height: 24,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.80,
+            height: MediaQuery.of(context).size.height * 0.50,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
