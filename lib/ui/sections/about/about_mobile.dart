@@ -1,3 +1,4 @@
+import 'package:devfolio/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class AboutMobile extends StatelessWidget {
@@ -5,77 +6,253 @@ class AboutMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Column(
-      children: [
-        const Text(
-          'ABOUT ME',
-          style: TextStyle(
-              color: Colors.grey, fontSize: 48, fontWeight: FontWeight.w800),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        Container(
-          width: 128,
-          height: 2,
-          decoration: const BoxDecoration(
-              color: Colors.black, shape: BoxShape.rectangle),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-       Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset('assets/images/person.jpg', height:  MediaQuery.of(context).size.width*0.4,width: MediaQuery.of(context).size.width,),
-              const SizedBox(
-                width: 24,
-              ),
-             Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+   return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        children: [
+          const Text(
+            'About Me',
+            style: TextStyle(
+                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Container(
+            width: 100,
+            height: 2,
+            decoration: const BoxDecoration(
+                color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.80,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.asset(
+                    'assets/images/dnes_one.jpg',
+                    height: MediaQuery.of(context).size.height * 0.20,
+                    width: MediaQuery.of(context).size.height * 0.60,
+                    filterQuality: FilterQuality.medium,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        SizedBox(
-                          height: 16,
-                        ),
-                        Text(
-                          "I'm Dinesh Maharjan",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                  const Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    const Center(
+                      child: Text(
+                        aboutUs,
+                        textAlign: TextAlign.justify,
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
-                            height: 2,
-                            fontWeight: FontWeight.w400),
+                            height: 1.5,
+                            fontWeight: FontWeight.w500),
                       ),
-                    const Text(
-                      "More about",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 10,
-                          fontWeight: FontWeight.w400),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "I have worked with following technologies",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              height: 1.5,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Flutter",
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 48),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Dart",
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Android",
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 48),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Kotlin",
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Java ",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 48),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Python",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Flutter-Web ",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 48),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right_rounded,
+                                  color: Colors.amber[600],
+                                ),
+                                const Text(
+                                  "Unreal Engine-Blueprints",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
-            ],
+              ],
+            ),
           ),
-      ],
+        ],
+      ),
     );
   }
 }

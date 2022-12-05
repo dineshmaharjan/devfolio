@@ -7,160 +7,256 @@ class AboutWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text(
-          'About Me',
-          style: TextStyle(
-              color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        Container(
-          width: 100,
-          height: 2,
-          decoration: const BoxDecoration(
-              color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
-        ),
-        const SizedBox(
-          height: 24,
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.80,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Image.asset(
-                  'assets/images/dnes_two.jpg',
-                  height: MediaQuery.of(context).size.height / 2,
-                  filterQuality: FilterQuality.medium,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 64, vertical: 64),
-                child: Column(
-                  children: [
-                    const Center(
-                      child: Text(
-                        aboutUs,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            height: 1.5,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Android",
-                            progressValue: 0.82,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Flutter",
-                            progressValue: 0.78,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Flutter-Web",
-                            progressValue: 0.58,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "iOS",
-                            progressValue: 0.25,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Java",
-                            progressValue: 0.75,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Kotlin",
-                            progressValue: 0.77,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Python",
-                            progressValue: 0.61,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Expanded(
-                          child: HorizontalProgressLabelWidget(
-                            title: "Game Development",
-                            progressValue: 0.45,
-                            tweenEnd: 75,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        children: [
+          const Text(
+            'About Me',
+            style: TextStyle(
+                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
           ),
-        ),
-      ],
+          const SizedBox(
+            height: 16,
+          ),
+          Container(
+            width: 100,
+            height: 2,
+            decoration: const BoxDecoration(
+                color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.80,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'assets/images/dnes_two.jpg',
+                      height: MediaQuery.of(context).size.height,
+                      filterQuality: FilterQuality.medium,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Center(
+                        child: Text(
+                          aboutUs,
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              height: 1.5,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "I have worked with following technologies",
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                height: 1.5,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Flutter",
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 48),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Dart",
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Android",
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 48),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Kotlin",
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Java ",
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 48),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Python",
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Flutter-Web ",
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 48),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.arrow_right_rounded,
+                                    color: Colors.amber[600],
+                                  ),
+                                  const Text(
+                                    "Unreal Engine-Blueprints",
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
