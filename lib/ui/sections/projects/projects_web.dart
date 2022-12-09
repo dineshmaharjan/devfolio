@@ -1,3 +1,5 @@
+import 'package:devfolio/core/widgets/animated_cursor_mouse_reggion.dart';
+import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:flutter/material.dart';
 
 class ProjectsWeb extends StatefulWidget {
@@ -48,7 +50,19 @@ class _ProjectsWebState extends State<ProjectsWeb>
           ),
           Column(
             children: [
-              getProjectDescription(),
+              const SizedBox(
+                height: 48,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  getProjectDescription(),
+                  getProjectDescription(),
+                  getProjectDescription(),
+                ],
+              ),
+             
             ],
           ),
         ],
@@ -57,45 +71,81 @@ class _ProjectsWebState extends State<ProjectsWeb>
   }
 
   Widget getProjectDescription() {
-    return SizedBox(
-      width: 100,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            "assets/images/portfolio_one.png",
-            width: MediaQuery.of(context).size.height * 0.60,
-            height: MediaQuery.of(context).size.height * 0.20,
-            fit: BoxFit.contain,
-            filterQuality: FilterQuality.medium,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                'Kiosk App for Restaurant',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 48),
+    return Expanded(
+      flex: 1,
+      child: MouseHoverRegionBuilder(builder: (isHovered) {
+        return Container(
+          width: MediaQuery.of(context).size.height * 0.40,
+          height: MediaQuery.of(context).size.height * 0.45,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 20.0,
+                  offset: Offset(0, 8),
+                )
+              ]),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 16,
               ),
-              Text(
-                'Kiosk app is used to order foods from menu for Dinne-in , and order items is print with KOT.',
-                maxLines: 1,
-                textDirection: TextDirection.rtl,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.normal,
-                  fontSize: 24,
+              AnimatedContainer(
+                width: isHovered
+                    ? MediaQuery.of(context).size.height * 0.62
+                    : MediaQuery.of(context).size.height * 0.60,
+                height: isHovered
+                    ? MediaQuery.of(context).size.height * 0.27
+                    : MediaQuery.of(context).size.height * 0.25,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.fastOutSlowIn,
+                child: Container(
+                  width: MediaQuery.of(context).size.height * 0.60,
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  margin: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        "assets/images/portfolio_one.png",
+                      ),
+                    ),
+                  ),
                 ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    'Kiosk App for Restaurant',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24),
+                  ),
+                  Text(
+                    'Kiosk app is used to order foods from menu for Dinne-in , and order items is print with KOT.',
+                    maxLines: 1,
+                    textDirection: TextDirection.rtl,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      }),
     );
   }
 

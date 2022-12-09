@@ -1,4 +1,5 @@
 import 'package:devfolio/core/utils/social_utils.dart';
+import 'package:devfolio/core/widgets/animated_cursor_mouse_reggion.dart';
 import 'package:devfolio/core/widgets/mouse_hover_region_builder.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,9 @@ class HomeWeb extends StatelessWidget {
                               e.value,
                               height: 24,
                               width: 24,
-                              color: isHover ? const Color(0xFFFCAE16) : Colors.black,
+                              color: isHover
+                                  ? const Color(0xFFFCAE16)
+                                  : Colors.black,
                             ),
                           );
                         }),
@@ -76,37 +79,44 @@ class HomeWeb extends StatelessWidget {
                 const SizedBox(
                   height: 24,
                 ),
-                TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color(0xFFFCAE16),
-                    ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
+                AnimatedCursorMouseRegion(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white54, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.white10,
+                  ),
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFFFCAE16),
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                        ),
+                      ),
+                      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                        (Set<MaterialState> states) {
+                          if (states.contains(MaterialState.hovered)) {
+                            return const Color(0xFFFCAE16).withOpacity(0.5);
+                          }
+                          if (states.contains(MaterialState.focused) ||
+                              states.contains(MaterialState.pressed)) {
+                            return Colors.grey.withOpacity(0.12);
+                          }
+                          return null; // Defer to the widget's default.
+                        },
                       ),
                     ),
-                    overlayColor: MaterialStateProperty.resolveWith<Color?>(
-                      (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.hovered)) {
-                          return const Color(0xFFFCAE16).withOpacity(0.5);
-                        }
-                        if (states.contains(MaterialState.focused) ||
-                            states.contains(MaterialState.pressed)) {
-                          return Colors.grey.withOpacity(0.12);
-                        }
-                        return null; // Defer to the widget's default.
-                      },
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Contact Me',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
+                    onPressed: () {},
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Contact Me',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:devfolio/controller/main_controller.dart';
 import 'package:devfolio/core/provider/scroll_provider.dart';
 import 'package:devfolio/core/utils/screen_utils.dart';
+import 'package:devfolio/core/widgets/animated_cursor_widget.dart';
 import 'package:devfolio/ui/sections/main/main_section.dart';
 import 'package:devfolio/ui/sections/navbar/mobile_navigation_drawer.dart';
 import 'package:flutter/material.dart';
@@ -37,49 +38,51 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.sourceCodeProTextTheme(),
         scaffoldBackgroundColor:const Color(0xFFFFFFFF),
       ),
-      home: Builder(
-        builder: (context) {
-          return Scaffold(
-            appBar: !ScreenUtils.isWebOrDesktop(context)
-                ? AppBar(
-                    title: const Text(
-                      'Devfolio',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    centerTitle: true,
-                    backgroundColor: const Color(0xFF040404),
-                  )
-                : null,
-            drawer: !ScreenUtils.isWebOrDesktop(context)
-                ? const MobileNavigationDrawer()
-                : null,
-            body: Container(
-               constraints: BoxConstraints(minWidth: MediaQuery.of(context).size.width, maxWidth: MediaQuery.of(context).size.width),
-              child: Padding(
-                padding:
-                  !ScreenUtils.isWebOrDesktop(context)?  const EdgeInsets.all( 0 ):const EdgeInsets.only(left: 24,right: 24),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ScreenUtils.isWebOrDesktop(context)
-                        ? const SizedBox(
-                            height: 16.0,
-                          )
-                        : const SizedBox(),
-                    ScreenUtils.isWebOrDesktop(context)
-                        ? const NavBarWidget()
-                        : const SizedBox(),
-                    const Expanded(
-                      child: MainSection(),
-                    ),
-                  ],
+      home: AnimatedCursorWidget(
+        child: Builder(
+          builder: (context) {
+            return Scaffold(
+              appBar: !ScreenUtils.isWebOrDesktop(context)
+                  ? AppBar(
+                      title: const Text(
+                        'Devfolio',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      centerTitle: true,
+                      backgroundColor: const Color(0xFF040404),
+                    )
+                  : null,
+              drawer: !ScreenUtils.isWebOrDesktop(context)
+                  ? const MobileNavigationDrawer()
+                  : null,
+              body: Container(
+                 constraints: BoxConstraints(minWidth: MediaQuery.of(context).size.width, maxWidth: MediaQuery.of(context).size.width),
+                child: Padding(
+                  padding:
+                    !ScreenUtils.isWebOrDesktop(context)?  const EdgeInsets.all( 0 ):const EdgeInsets.only(left: 24,right: 24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ScreenUtils.isWebOrDesktop(context)
+                          ? const SizedBox(
+                              height: 16.0,
+                            )
+                          : const SizedBox(),
+                      ScreenUtils.isWebOrDesktop(context)
+                          ? const NavBarWidget()
+                          : const SizedBox(),
+                      const Expanded(
+                        child: MainSection(),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
