@@ -8,7 +8,7 @@ class AnimatedCursorProvider extends ChangeNotifier {
   AnimatedCursorProvider();
   var animatedState =  const AnimatedCursorState();
 
-  void changeCursorPointer(GlobalKey key, {BoxDecoration? decoration}) {
+  void changeCursorPointer(GlobalKey key, {BoxDecoration? decoration, bool? isViewDemo}) {
     final renderBox = key.currentContext?.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
 
@@ -18,6 +18,7 @@ class AnimatedCursorProvider extends ChangeNotifier {
           .localToGlobal(Offset.zero)
           .translate(renderBox.size.width / 2, renderBox.size.height / 2),
       decoration: decoration ?? AnimatedCursorState.kDefaultDecoration,
+      isViewDemo: isViewDemo ?? AnimatedCursorState.kIsViewDemo,
     );
     notifyListeners();
   }

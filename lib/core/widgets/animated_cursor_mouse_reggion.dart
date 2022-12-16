@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AnimatedCursorMouseRegion extends StatefulWidget {
-  const AnimatedCursorMouseRegion({Key? key, this.child, this.decoration})
+  const AnimatedCursorMouseRegion({Key? key, this.child, this.decoration, this.isViewDemo})
       : super(key: key);
 
   final Widget? child;
   final BoxDecoration? decoration;
+  final bool? isViewDemo;
 
   @override
   State<AnimatedCursorMouseRegion> createState() => _AnimatedCursorMouseRegionState();

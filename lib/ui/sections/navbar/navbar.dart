@@ -98,7 +98,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
                           focusColor: Colors.transparent,
                           onTap: () => _scrollProvider.itemScrollController
                               .scrollTo(
-                                  index: 4,
+                                  index: 3,
                                   duration: const Duration(seconds: 2),
                                   curve: Curves.easeInOutCubic),
                           child: Padding(

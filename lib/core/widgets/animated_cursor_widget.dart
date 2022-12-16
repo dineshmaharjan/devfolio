@@ -29,7 +29,7 @@ class AnimatedCursorWidget extends StatelessWidget {
                 ),
               ),
               Visibility(
-                 visible: state.offset != Offset.zero,
+                visible: state.offset != Offset.zero,
                 child: AnimatedPositioned(
                   left: state.offset.dx - state.size.width / 2,
                   top: state.offset.dy - state.size.height / 2,
@@ -44,9 +44,10 @@ class AnimatedCursorWidget extends StatelessWidget {
                       decoration: state.decoration,
                     ),
                   ),
-                  duration:const  Duration(milliseconds: 50),
+                  duration: const Duration(milliseconds: 50),
                 ),
               ),
+              
             ],
           );
         },

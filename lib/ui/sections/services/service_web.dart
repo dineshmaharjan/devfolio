@@ -12,6 +12,7 @@ class ServiceWeb extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(height: 48,),
           const Text(
             'What I can do',
             style: TextStyle(

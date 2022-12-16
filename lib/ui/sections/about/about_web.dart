@@ -8,28 +8,31 @@ class AboutWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        children: [
-          const Text(
-            'About Me',
-            style: TextStyle(
-                color: Colors.black, fontSize: 48, fontWeight: FontWeight.w800),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Container(
-            width: 100,
-            height: 2,
-            decoration: const BoxDecoration(
-                color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.50,
-            child: Row(
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              'About Me',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 48,
+                  fontWeight: FontWeight.w800),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Container(
+              width: 100,
+              height: 2,
+              decoration: const BoxDecoration(
+                  color: Color(0xFFFCAE16), shape: BoxShape.rectangle),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -38,7 +41,7 @@ class AboutWeb extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(
                       'assets/images/dnes_two.jpg',
-                      height: MediaQuery.of(context).size.height,
+                      height: MediaQuery.of(context).size.height/2,
                       filterQuality: FilterQuality.medium,
                       fit: BoxFit.contain,
                     ),
@@ -46,9 +49,11 @@ class AboutWeb extends StatelessWidget {
                 ),
                 Flexible(
                   flex: 2,
+                  fit: FlexFit.tight,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const Center(
                         child: Text(
@@ -64,7 +69,6 @@ class AboutWeb extends StatelessWidget {
                       const SizedBox(
                         height: 24,
                       ),
-
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -247,14 +251,13 @@ class AboutWeb extends StatelessWidget {
                           ),
                         ],
                       ),
-                      
                     ],
                   ),
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
